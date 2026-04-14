@@ -27,6 +27,12 @@ bool Triangle::isDegenerate() const {
 string Triangle::pointPosition(const Point &P) const {
     double S = areaVector();
 
+    if ((fabs(P.x - A.x) < 1e-9 && fabs(P.y - A.y) < 1e-9) ||
+        (fabs(P.x - B.x) < 1e-9 && fabs(P.y - B.y) < 1e-9) ||
+        (fabs(P.x - C.x) < 1e-9 && fabs(P.y - C.y) < 1e-9)) {
+        return "Tochka na vershyni trykutnyka";
+    }
+
     if (isDegenerate()) {
         return "Tochka poza trykutnykom (trykutnyk vyrodzhenyi)";
     }
@@ -46,4 +52,3 @@ string Triangle::pointPosition(const Point &P) const {
         return "Tochka poza trykutnykom";
     }
 }
-

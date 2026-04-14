@@ -7,11 +7,8 @@ int main() {
 
     Triangle t(A, B, C);
 
-    double heron = t.areaHeron();
-    double vector = t.areaVector();
-
-    cout << "Plosha za Heronom: " << heron << endl;
-    cout << "Plosha za vektornym dobutkom: " << vector << endl;
+    cout << "Plosha za Heronom: " << t.areaHeron() << endl;
+    cout << "Plosha za vektornym dobutkom: " << t.areaVector() << endl;
 
     if (t.isDegenerate()) {
         cout << "Trykutnyk vyrodzhenyi (plosha = 0)." << endl;
